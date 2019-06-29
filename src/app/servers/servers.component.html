@@ -1,5 +1,4 @@
-<div class='row'>
-  <h2>Servers List</h2>
-  <app-server name='Server1' status='true'></app-server>
-  <app-server  name='Server2' status='flase'></app-server>
+<h2>Servers List</h2>
+<div *ngFor="let sn of serverObj" class='row'>
+    <app-server  name='Server{{ sn.number }}' status='{{ sn.status }}'></app-server>
 </div>
