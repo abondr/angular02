@@ -8,18 +8,19 @@ import { Server } from 'selenium-webdriver/safari';
 })
 export class ServersComponent implements OnInit {
   serverObj: Server[] = [];
+  serverName: string = 'server1';
   index:number =0;
   stat:boolean = true;
   constructor() {
-    setInterval(
-      () => {
-        this.index += 1;
-        this.stat = this.stat === true? false : true;
-        this.serverObj.push({'number':this.index,'status':this.stat});
-        console.log({'number':this.index,'status':this.stat});
-     }, 2000);
-  }
 
+  }
+  setServer = ()=>{
+    this.index += 1;
+    this.serverName = this.serverName.length < 1 ? "server1" : this.serverName;
+    this.stat = this.stat === true ? false : true;
+    this.serverObj.push({'name':this.serverName,'status':this.stat});
+    this.serverName = "server1";
+  }
   ngOnInit() {
   }
 

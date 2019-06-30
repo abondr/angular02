@@ -1,4 +1,6 @@
 <h2>Servers List</h2>
+<input type="text" class='form-control' [(ngModel)] = 'serverName'>
+<button (click)="setServer()" class="btn btn-primary">Click</button>
 <div *ngFor="let sn of serverObj" class='row'>
-    <app-server  name='Server{{ sn.number }}' status='{{ sn.status }}'></app-server>
+    <app-server  name='{{ sn.name }}' status='{{ sn.status }}'></app-server>
 </div>
